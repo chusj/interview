@@ -12,7 +12,10 @@ namespace SortAlgorithmConsoleApp
             //int sum = Recursion.GetSum(arr, arr.Length);
             //Console.WriteLine(sum);
 
-            PrintArray(BubbleSort.Sort(arr));
+            //PrintArray(BubbleSort.Sort(arr));
+            
+            ISort sort = new Selection();
+            PrintArray(sort.Sort(arr));
 
             Console.ReadKey();
         }
