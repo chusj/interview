@@ -12,16 +12,20 @@ namespace SortAlgorithmConsoleApp
             //int sum = Recursion.GetSum(arr, arr.Length);
             //Console.WriteLine(sum);
 
-            //PrintArray(BubbleSort.Sort(arr));
-            
+            PrintArray(BubbleSort.Sort(arr));
+
             ISort sort = new Selection();
             PrintArray(sort.Sort(arr));
+
+            double[] doubleArray = { 1.5, 0.3, 3.4, 1.1, 0.1 };
+            ISortGeneric sortGeneric = new Insertion();
+            PrintArray(sortGeneric.Sort(doubleArray));
 
             Console.ReadKey();
         }
 
 
-        private static void PrintArray(int[] array)
+        private static void PrintArray<T> (T[] array)
         {
             foreach (var item in array)
             {
