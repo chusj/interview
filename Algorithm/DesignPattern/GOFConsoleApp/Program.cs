@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using GOFConsoleApp.Strategy
+using GOFConsoleApp.Strategy;
+using GOFConsoleApp.Singleton;
 
 namespace GOFConsoleApp
 {
@@ -8,9 +9,6 @@ namespace GOFConsoleApp
     {
         static void Main(string[] args)
         {
-            //策略模式
-            string ClientId = "";
-
             Console.WriteLine("Hello World!");
         }
 
@@ -39,6 +37,17 @@ namespace GOFConsoleApp
             }
 
             send.SendMessage("", list);
+        }
+
+        /// <summary>
+        /// 单例模式
+        /// </summary>
+        private void SingletonModel()
+        {
+            //无法实例化，编译错误
+            //SingletonDemo singleton = new SingletonDemo();
+
+            SingletonDemo demo =  SingletonDemo.GetInstance();
         }
     }
 }
