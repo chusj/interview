@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GOFConsoleApp.Singleton
+﻿namespace GOFConsoleApp.Singleton
 {
     class SingletonDemo
     {
-
         private static SingletonDemo instance;
 
         private SingletonDemo()
@@ -16,9 +9,14 @@ namespace GOFConsoleApp.Singleton
             //设置私有，禁止被实例化
         }
 
+        /// <summary>
+        /// 获取实例
+        /// </summary>
+        /// <returns></returns>
         public static SingletonDemo GetInstance()
         {
-            if(instance == null)
+            //在多线程的情况下会得到多个Singleton实例,因为在两个线程同时运行GetInstance方法时，此时两个线程判断(uniqueInstance ==null)这个条件时都返回真
+            if (instance == null)
             {
                 instance = new SingletonDemo();
             }
