@@ -25,15 +25,17 @@ namespace GOFConsoleApp.Singleton
              * lock语句运行完之后（即线程运行完之后）会对该对象"解锁"
             */
 
-            lock (locker)
+            if (instance == null)  //避免锁所增加的额外开销 “双重锁定”
             {
-                if (instance == null)
+                lock (locker)
                 {
-                    instance = new Singleton2();
+                    if (instance == null)
+                    {
+                        instance = new Singleton2();
+                    }
                 }
-
-                return instance;
             }
+            return instance;
         }
     }
 }
