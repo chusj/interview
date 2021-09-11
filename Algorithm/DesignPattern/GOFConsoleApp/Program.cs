@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GOFConsoleApp.Strategy;
 using GOFConsoleApp.Singleton;
+using GOFConsoleApp.FactoryMethod;
 
 namespace GOFConsoleApp
 {
@@ -9,7 +10,10 @@ namespace GOFConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            NvWa nv = new NvWa();
+            nv.SimpleFactory();
+
+            Console.ReadKey();
         }
 
         /// <summary>
