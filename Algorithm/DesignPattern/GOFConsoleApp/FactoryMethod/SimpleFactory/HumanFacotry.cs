@@ -17,7 +17,7 @@
             {
                 return new WhiteHuman();
             }
-            else
+            else //缺点：如果增加黄种人、其他颜色人种，需要N个if判断语句
             {
                 return null;
             }

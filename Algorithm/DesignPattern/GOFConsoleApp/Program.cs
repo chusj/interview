@@ -13,6 +13,9 @@ namespace GOFConsoleApp
             NvWa nv = new NvWa();
             nv.SimpleFactory();
 
+            Console.WriteLine("======================分割线=======================");
+            nv.Factory();
+
             Console.ReadKey();
         }
 
