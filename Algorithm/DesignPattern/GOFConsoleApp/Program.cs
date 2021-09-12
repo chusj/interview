@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GOFConsoleApp.Strategy;
 using GOFConsoleApp.Singleton;
 using GOFConsoleApp.FactoryMethod;
+using GOFConsoleApp.AbstractFactory;
 
 namespace GOFConsoleApp
 {
@@ -10,11 +11,14 @@ namespace GOFConsoleApp
     {
         static void Main(string[] args)
         {
-            NvWa nv = new NvWa();
-            nv.SimpleFactory();
+            //NvWa nv = new NvWa();
+            //nv.SimpleFactory();
 
-            Console.WriteLine("======================分割线=======================");
-            nv.Factory();
+            //Console.WriteLine("======================分割线=======================");
+            //nv.Factory();
+
+            NvWa2 wa2 = new NvWa2();
+            wa2.Create();
 
             Console.ReadKey();
         }
