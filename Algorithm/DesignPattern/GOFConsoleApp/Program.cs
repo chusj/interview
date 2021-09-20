@@ -4,6 +4,7 @@ using GOFConsoleApp.Strategy;
 using GOFConsoleApp.Singleton;
 using GOFConsoleApp.FactoryMethod;
 using GOFConsoleApp.AbstractFactory;
+using GOFConsoleApp.Observer;
 
 namespace GOFConsoleApp
 {
@@ -17,8 +18,11 @@ namespace GOFConsoleApp
             //Console.WriteLine("======================分割线=======================");
             //nv.Factory();
 
-            NvWa2 wa2 = new NvWa2();
-            wa2.Create();
+            //NvWa2 wa2 = new NvWa2();
+            //wa2.Create();
+
+            Program p = new Program();
+            p.ObserverMode();
 
             Console.ReadKey();
         }
@@ -59,6 +63,21 @@ namespace GOFConsoleApp
             //SingletonDemo singleton = new SingletonDemo();
 
             SingletonDemo demo =  SingletonDemo.GetInstance();
+        }
+
+
+        private void ObserverMode()
+        {
+            Secretary qiantai = new Secretary();
+            StockObserver tongshi1 = new StockObserver("chusj",qiantai);
+            StockObserver tongshi2 = new StockObserver("chenhao", qiantai);
+
+            qiantai.Attach(tongshi1);
+            qiantai.Attach(tongshi2);
+
+
+            qiantai.SecretaryAction = "老板回来了……";
+            qiantai.Notify();
         }
     }
 }
