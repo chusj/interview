@@ -1,6 +1,6 @@
 ﻿namespace AbountFactoryConsoleApp
 {
-    interface IAbstractFactory
+    interface IFactory
     {
         IProduct Create();
     }

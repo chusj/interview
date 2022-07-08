@@ -2,7 +2,7 @@
 
 namespace AbountFactoryConsoleApp
 {
-    class AFactory : IAbstractFactory
+    class AFactory : IFactory
     {
         public IProduct Create()
         {
